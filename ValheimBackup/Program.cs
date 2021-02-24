@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 
 namespace ValheimBackup
 {
@@ -6,16 +8,10 @@ namespace ValheimBackup
     {
         static void Main(string[] args)
         {
-            // Extracting current UserName for accurate pathname for source and target directory
-            // Setting up paths with Username in strings after
-
-            string currentUser = Environment.UserName;
-            string sourceDir = @"C:\Users\" + currentUser + @"\Desktop\Projects\ValheimBackup\ValheimBackup\Test\characters.rar";
-            string backupDir = @"C:\Users\" + currentUser + @"\Desktop\Projects\ValheimBackup\ValheimBackup\Test\characters" + 1 + @".rar";
-
-            //Copying File
-            System.IO.File.Copy(sourceDir, backupDir);
-           
+            FileZip newBackup = new FileZip();
+            Console.WriteLine("Backing up");
+            newBackup.zipFile("characters");
+            Console.WriteLine("File Backed up");
         }
     }
 }

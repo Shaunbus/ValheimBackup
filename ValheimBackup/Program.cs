@@ -8,9 +8,9 @@ namespace ValheimBackup
     {
         static void Main(string[] args)
         {
-            FileZip newBackup = new FileZip();
+            FileZipper newBackup = new FileZipper();
             string userName = Environment.UserName;
-
+            Console.WriteLine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
             Console.WriteLine("Is the user " + userName + "? Type 'Y' if correct."); 
             string answer = Console.ReadLine();
             if (answer == "Y" || answer == "y")
@@ -25,11 +25,13 @@ namespace ValheimBackup
                 else if (answer == "W" || answer == "w")
                 {
                     newBackup.zipFile("worlds");
+                    return;
                 }
                 else if (answer == "B" || answer == "b")
                 {
                     newBackup.zipFile("characters");
                     newBackup.zipFile("worlds");
+                    return;
                 }
                 else 
                 {

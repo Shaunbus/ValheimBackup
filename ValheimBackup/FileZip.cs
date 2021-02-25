@@ -12,9 +12,12 @@ namespace ValheimBackup
         {
             // Extracting current UserName for accurate pathname for source and target directory
             // Setting up paths with Username in strings after
+            string currentUser = Environment.UserName;
+            DirectoryPath dirPath = new DirectoryPath(folder, currentUser);
+            ZipPath zipPath = new ZipPath(folder, currentUser);
 
-            string sourceFilePath = new DirectoryPath().GetSourcePath(folder);
-            string destZipPath = new ZipPath().GetSourcePath(folder);
+            string sourceFilePath = dirPath.GetPath();
+            string destZipPath = zipPath.GetPath();
 
             //Want to Zip File here
             try

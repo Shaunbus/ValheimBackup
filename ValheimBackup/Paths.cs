@@ -6,7 +6,6 @@ namespace ValheimBackup
 {
     public interface Paths
     {
-        string GetSourcePath(string folder);
-        
+        string GetPath();
     }
 }

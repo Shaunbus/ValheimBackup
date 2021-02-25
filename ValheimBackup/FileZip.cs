@@ -13,17 +13,18 @@ namespace ValheimBackup
             // Extracting current UserName for accurate pathname for source and target directory
             // Setting up paths with Username in strings after
 
-            string charDirPath = new DirectoryPaths().GetSourcePath(folder);
-            string charZipPath = new DirectoryPaths().GetZipPath(folder);
+            string sourceFilePath = new DirectoryPath().GetSourcePath(folder);
+            string destZipPath = new ZipPath().GetSourcePath(folder);
 
             //Want to Zip File here
             try
             {
-                ZipFile.CreateFromDirectory(charDirPath, charZipPath, CompressionLevel.Fastest, true);
+                Console.WriteLine("Backing up");
+                ZipFile.CreateFromDirectory(sourceFilePath, destZipPath, CompressionLevel.Fastest, true);
+                Console.WriteLine("File Backed up");
             }
             catch (IOException e)
             {
-                //Console.WriteLine("File already exists");
                 Console.WriteLine(e.Message);
             }
         }

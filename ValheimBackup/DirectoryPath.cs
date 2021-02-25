@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ValheimBackup
 {
-    class DirectoryPaths
+    class DirectoryPath : Paths
     {
         //extracting curret user
         string currentUser = Environment.UserName;
@@ -20,14 +20,6 @@ namespace ValheimBackup
             return charDirPath;
         }
 
-        public string GetZipPath(string folder)
-        {
-            string nowTime = (DateTime.Now.ToString("yyyyMMdd-HHmm"));
-            string charZipPath = @"C:\Users\" + currentUser + @"\Desktop\Coding\Projects\ValheimBackup\ValheimBackup\Test\" + folder + nowTime + @".zip";
-
-            //Console.WriteLine(Environment.CurrentDirectory);
-
-            return charZipPath;
-        }
+        
     }
 }

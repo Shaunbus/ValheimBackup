@@ -9,9 +9,10 @@ namespace ValheimBackup
         static void Main(string[] args)
         {
             FileZip newBackup = new FileZip();
-            Console.WriteLine("Backing up");
+            
             newBackup.zipFile("characters");
-            Console.WriteLine("File Backed up");
+            newBackup.zipFile("worlds");
+            
         }
     }
 }

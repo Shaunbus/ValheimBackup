@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.IO.Compression;
 
 namespace ValheimBackup
 {
@@ -14,7 +12,7 @@ namespace ValheimBackup
         {
             FileZipper newBackup = new FileZipper();
             string userName = Environment.UserName;
-            Console.WriteLine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+            Console.WriteLine("Saving backups in - " + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
             Console.WriteLine("Is the user " + userName + "? Type 'Y' if correct."); 
             string answer = Console.ReadLine();
             if (answer == "Y" || answer == "y")

@@ -11,22 +11,13 @@ namespace ValheimBackup
         public void zipFile(string folder)
         {
             // Extracting current UserName for accurate pathname for source and target directory
-            // Setting up paths with Username in strings after
             string currentUser = Environment.UserName;
             string nowTime = (DateTime.Now.ToString("yyyyMMdd-HHmm"));
-
-
-            //Test Path
-            //string sourceFilePath = @"C:\Users\" + currentUser + @"\Desktop\Coding\Projects\ValheimBackup\ValheimBackup\Test\" + folder;
-
-            //Real Path
             string sourceFilePath = @"C:\Users\" + currentUser + @"\AppData\LocalLow\IronGate\Valheim\" + folder;
 
-            //test zip path
-            //string destZipPath = @"C:\Users\" + currentUser + @"\Desktop\Coding\Projects\ValheimBackup\ValheimBackup\Test\" + folder + nowTime + @".zip";
+            //This is the path that the .dll resides so wherever you run the exe it should place the backups there
             string destZipPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\" + folder + nowTime + @".zip";
 
-            //Want to Zip File here
             try
             {
                 Console.WriteLine("backing up " + folder);

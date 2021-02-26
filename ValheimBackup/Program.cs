@@ -4,6 +4,10 @@ using System.IO.Compression;
 
 namespace ValheimBackup
 {
+    /// <summary>
+    /// to do - backup folder
+    /// 
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

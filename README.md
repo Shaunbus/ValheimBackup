@@ -1,5 +1,5 @@
 # ValheimBackup
-A very simple utility to backup Valheim save Data in C# using only Microsoft .NET-based APIs
+A very simple utility to backup Valheim save Data in C#.
 
 ## System Classes Used
 **Environment**
@@ -21,3 +21,8 @@ A very simple utility to backup Valheim save Data in C# using only Microsoft .NE
 **System.Reflection**
   - Assembly
     - Also used to help capture where the current executable is running from.
+
+## TODO
+- Add Backup Folder location
+- Better error handling
+- Logging
